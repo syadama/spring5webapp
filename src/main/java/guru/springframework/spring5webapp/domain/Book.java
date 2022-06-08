@@ -1,4 +1,4 @@
-package domain;
+package guru.springframework.spring5webapp.domain;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,7 +14,7 @@ public class Book {
 
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
-    inverseJoinColumns = @JoinColumn(name = "author_id"))
+        inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
 
     public Long getId() {
@@ -57,6 +57,5 @@ public class Book {
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
-
 
 }
